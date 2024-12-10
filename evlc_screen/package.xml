@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>evlc_screen</name>
+  <description>
+    EventOCC pipeline
+  </description>
+  <version>0.1.0</version>
+  <license>Apache-2.0</license>
+
+  <author>Hang Su</author>
+  <maintainer email="suhang@shanghaitech.edu.cn">Hang Su</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>evlc_common</depend>
+  <depend>evlc_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>rosbag</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+</package>

@@ -46,7 +46,37 @@ Note that in our experiment for camera motion, we set the cell number to 16.
 
 The example data is available at [Google Drive](https://drive.google.com/file/d/1AN-MyGDBzKnodQiOJwfY-3UyuNw-aiyB/view?usp=sharing). The example data contain a rosbag, GT trajectory and the raw message to transmit.
 
-The code implementation and usage are coming soon. 
+### Dependencies 
+The code has been tested on Ubuntu 20.04 with ROS noetic and the following dependencies:
+- Eigen3 3.3.7
+- OpenCV 4.2
+- Ceres 2.2
+
+### Usage
+
+Enter an existing catkin workspace
+``` bash
+cd {your_catkin_workspace}/src/
+```
+or create a catkin workspcae if you don't have one
+``` bash
+mkdir -p ros_ws/src && cd ros_ws/src
+```
+Clone this repository from Github
+``` bash
+git clone git@github.com:suhang99/EventOCC.git
+```
+Build the catkin package by
+``` bash
+source /opt/ros/noetic/setup.bash
+catkin build evlc_screen
+```
+Make sure you have correctly set the parameters in *launch/run.launch* and *param/default.yaml*, and run
+``` bash
+source {your_catkin_workspace}/devel/setup.bash
+roslaunch evlc_screen run.launch
+```
+The output trajectory is in TUM format (timestamp tx ty tz qx qy qz qw).
 
 ## Acknowledgements
 

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>evlc_common</name>
+  <description>
+    EVLC common module
+  </description>
+  <version>0.1.0</version>
+  <license>Apache-2.0</license>
+
+  <author>Hang Su</author>
+  <maintainer email="suhang@shanghaitech.edu.cn">Hang Su</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <depend>roscpp</depend>
+</package>

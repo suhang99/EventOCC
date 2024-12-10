@@ -1,0 +1,73 @@
+event_topic: /prophesee/camera/cd_events_buffer
+traj_output_path: /home/suhang/data/tmp/traj.out
+data_output_path: "/home/suhang/data/tmp/data.out"
+log_output_path: "/home/suhang/data/tmp/evlc.log"
+verbose_level: info
+sender:
+  frequency: 30
+  marker_size: 0.272
+  payload_cells: 16
+receiver:
+  preprocessor:
+    subsample_rate: 1
+    filters:
+      refractory:
+        active: false
+        same_pol_thres: 0.001
+        oppo_pol_thres: 0.001
+      neighbor:
+        active: false
+        neighbor_thres: 5
+        radius: 2
+        max_age: 0.001
+  tracker:
+    frequency: 4000
+    distance_threshold: 6
+    alpha: 0.5
+  detector:
+    start_time: 5
+    temporal_detector_period: 0.5
+    amplitude_threshold: 100
+    frequency: 2
+  decoder:
+    times: 3
+    cell_thres: 0.6
+    binary_thres: 0.1
+  min_events_to_start: 100000
+visualizer:
+  active: true
+  frequency: 5
+  
+camera:
+  image_width: 1280
+  image_height: 720
+  camera_matrix:
+    rows: 3
+    cols: 3
+    data: [1033.68919,    0.     ,  624.77131,
+              0.     , 1037.05047,  321.82164,
+              0.     ,    0.     ,    1.     ]
+  distortion_model: plumb_bob
+  distortion_coefficients:
+    rows: 1
+    cols: 5
+    data: [-0.032681, 0.066110, 0.001529, 0.000190, 0.000000]
+  rectification_matrix:
+    rows: 3
+    cols: 3
+    data: [1., 0., 0.,
+          0., 1., 0.,
+          0., 0., 1.]
+  projection_matrix:
+    rows: 3
+    cols: 4
+    data: [1035.3468 ,    0.     ,  624.94079,    0.     ,
+              0.     , 1037.29932,  322.86983,    0.     ,
+              0.     ,    0.     ,    1.     ,    0.     ]
+  T_body_camera:
+    rows: 3
+    cols: 3
+    data: [-0.815842,  0.514992,   0.26303, 0.0137501,
+           -0.560121, -0.816827, -0.138049, 0.0449696,
+            0.143756, -0.259955,   0.95486, 0.0859729,
+                   0,         0,         0,         1]

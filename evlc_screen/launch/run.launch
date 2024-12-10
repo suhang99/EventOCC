@@ -1,0 +1,16 @@
+<launch>
+  <arg name="rosbag_file" default="" />
+  <arg name="read_from_rosbag" default="true" />
+  <arg name="use_rviz" default="true" />
+
+  <group if="$(arg use_rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find evlc_screen)/rviz/default.rviz" />
+  </group>
+
+  <node name="evlc_screen_node" pkg="evlc_screen" type="evlc_screen_node" output="screen">
+    <rosparam file="$(find evlc_screen)/param/default.yaml" />
+    <param name="rosbag_play" value="$(arg read_from_rosbag)" />
+    <param name="rosbag_file" value="$(arg rosbag_file)" />
+  </node>
+
+</launch>
