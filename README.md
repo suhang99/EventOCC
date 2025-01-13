@@ -75,7 +75,7 @@ Enter an existing catkin workspace
 ``` bash
 cd {your_catkin_workspace}/src/
 ```
-or create a catkin workspcae if you don't have one
+or create a catkin workspace if you don't have one
 ``` bash
 mkdir -p ros_ws/src && cd ros_ws/src
 ```
